@@ -355,9 +355,52 @@
                 height: 120px;
             }
         }
+
+        /* Estilos para el reproductor minimalista */
+        #reproductor-musica {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        /* Personalizar controles de audio */
+        #reproductor-musica audio {
+            width: 200px;
+            height: 40px;
+        }
+        
+        /* Ocultar algunos elementos del control nativo si quieres */
+        #reproductor-musica audio::-webkit-media-controls-panel {
+            background: transparent;
+        }
+        
+        /* Etiqueta opcional */
+        .musica-label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+
+    <!-- <audio controls src="music.mp3"></audio> -->
+
+    <!-- Reproductor de música -->
+    <div id="reproductor-musica">
+        <span class="musica-label">🎵 Música de fondo</span>
+        <audio controls src="music.mp3"></audio>
+    </div>
+
     <header>
         <div class="floating-hearts" id="hearts-container"></div>
         <div class="header-content">
